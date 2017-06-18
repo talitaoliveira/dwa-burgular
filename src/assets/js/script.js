@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$(".button-collapse").sideNav();
 
 	$(".menu-cardapio").click(function(){
-		Materialize.showStaggeredList('#staggered-test');
+		setTimeout(teste => {Materialize.showStaggeredList('#staggered-test');}, 500)
+		
 	});
 });
