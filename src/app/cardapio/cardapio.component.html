@@ -1,0 +1,12 @@
+<h5>Cardápio</h5>
+
+<ul class="collection" id="staggered-test">
+  <li class="collection-item avatar " *ngFor="let produto of cardapio">
+    <img src="{{ produto.image }}" alt="" class="circle">
+    <span class="title">{{ produto.name }}</span>
+    <p>
+      {{ produto.description }}
+    </p>
+    <a href="#!" class="secondary-content">{{ produto.price | currency:'BRL':'true'  }}</a>
+  </li>
+</ul>

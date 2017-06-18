@@ -1,0 +1,17 @@
+.side-nav{
+	color: #000;
+}
+.side-nav ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.side-nav ul>li{
+	flex-grow: 1;
+	/*width: 100px;*/
+}
+.side-nav ul>li>a{
+	display: flex;
+}
+.side-nav ul>li>a>i{
+font-size: 1em;
+}

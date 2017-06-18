@@ -1,8 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-	--theme-color: #e53935;
+	--theme-color: #F34235;
 }
 
 nav, footer{
 	background-color: var(--theme-color) !important;
 }
+
+/*app-root {
+      display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}*/
