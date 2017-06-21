@@ -6,4 +6,9 @@ $(document).ready(function(){
 		setTimeout(teste => {Materialize.showStaggeredList('#staggered-test');}, 500)
 		
 	});
+$('.owl-carousel').owlCarousel({
+    items:1,
+    margin:10,
+    autoHeight:true
+});
 });
