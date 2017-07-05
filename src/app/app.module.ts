@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,11 +7,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { CardapioComponent } from './cardapio/cardapio.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { routing } from './app.routing';
-import { CardapioService } from './cardapio/cardapio.service';
+import { ItemComponent } from './cardapio/item/item.component';
+import { CardapioModule } from './cardapio/cardapio.module';
 
 @NgModule({
   declarations: [
@@ -20,17 +19,18 @@ import { CardapioService } from './cardapio/cardapio.service';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    CardapioComponent,
     PerfilComponent,
-    PedidosComponent
+    PedidosComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    CardapioModule
   ],
-  providers: [CardapioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
