@@ -12,7 +12,7 @@ import { CardapioService } from './../cardapio.service';
 export class ItemComponent implements OnInit, OnDestroy {
 
   inscricao: Subscription;
-  item: any;
+  produto: any;
 
 
   constructor(
@@ -24,8 +24,7 @@ export class ItemComponent implements OnInit, OnDestroy {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         let id = params['id'];
-        this.item = this.cardapioService.getItem(id);
-        console.log(this.item);
+        this.cardapioService.getProduct(id).subscribe(data => this.produto = data);
       }
     );
   }

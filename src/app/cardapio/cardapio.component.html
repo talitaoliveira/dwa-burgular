@@ -4,16 +4,21 @@
 
 <ul class="collection" id="staggered-test">
   <li class="collection-item row avatar" *ngFor="let produto of cardapio">
-    
-      <img src="{{ produto.image }}" alt="" class="circle">
+      <div class="col s8">
+        <img src="{{ produto.image }}" alt="" class="circle">
       <span class="title">{{ produto.name }}</span>
       <p>
         {{ produto.description }}
       </p>
     
-      <a href="#!" class="secondary-content" [routerLink]="['/item', produto._id]">
+      </div>
+      <div class="col s4">
+        <a href="#!" class="secondary-content" [routerLink]="['/item', produto._id]">
+        {{ produto.price |  currency:'BRL':'true' }}
         <i class="material-icons">send</i>
       </a>
+      </div>
+      
   </li>
 </ul>
 

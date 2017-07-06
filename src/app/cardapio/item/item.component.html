@@ -1,3 +1,28 @@
-<p>
-  {{ item | json }}
-</p>
+<div class="row">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-image">
+        <img src="{{ produto.image }}">
+        <span class="card-title red accent-4">{{ produto.price | currency: "BRL":"true" }}</span>
+      </div>
+      <div class="card-content">
+        <h4>
+          {{ produto.name }}
+        </h4>
+        <p>
+          {{ produto.description }}
+        </p>
+        <div *ngIf="produto.items">
+          <ul class="" id="staggered-test">
+            <li class="item row avatar" *ngFor="let item of produto.items">            
+              <span class="title">{{ item.name }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
