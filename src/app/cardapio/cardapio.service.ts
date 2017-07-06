@@ -17,8 +17,8 @@ export class CardapioService {
       .map(res => res.json());
   }
 
-  getItem(id: number) {
-     return this.http.get(this.url + '/items/' + id)
+  getProduct(id: number) {
+     return this.http.get(this.url + '/products/' + id)
       .map(res => res.json());
   }
 
