@@ -12,16 +12,18 @@
         <p>
           {{ produto.description }}
         </p>
+        <br>
         <div *ngIf="produto.items">
-          <ul class="" id="staggered-test">
-            <li class="item row avatar" *ngFor="let item of produto.items">            
+          <h5>O que ele acompanha: </h5>
+          <ul class="collection" id="staggered-test">
+            <li class="collection-item" *ngFor="let item of produto.items">            
               <span class="title">{{ item.name }}</span>
             </li>
           </ul>
         </div>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        <a class="waves-effect waves-light btn-large">Comprar</a>
       </div>
     </div>
   </div>
