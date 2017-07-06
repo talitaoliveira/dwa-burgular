@@ -12,6 +12,13 @@
 .side-nav ul>li>a{
 	display: flex;
 }
-.side-nav ul>li>a>i{
+/*.side-nav ul>li>a>i{
 font-size: 1em;
+}*/
+.item-menu{
+	width: 100%;
+	padding: 0;
 }
+/*.item-menu  a{
+	padding: 0;
+}*/
