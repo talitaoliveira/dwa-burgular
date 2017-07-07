@@ -1,0 +1,35 @@
+<div class="container">
+
+  <h4>Cadastre-se</h4>
+
+  <div class="row">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="fullname" class="control-label">Fullname</label>
+          <input type="text" class="form-control" id="fullname" placeholder="Fullname" [(ngModel)]="usuario.fullname" required name="fullname" #fullname="ngModel" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="phone" class="control-label">Phone</label>
+          <input type="text" class="form-control" id="phone" placeholder="Phone" [(ngModel)]="usuario.phone" required name="phone" #phone="ngModel" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="email" class="control-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="usuario.email" required name="email" #email="ngModel" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="password" class="control-label">Password</label>
+          <input type="password" class="validate" id="Password" placeholder="password" [(ngModel)]="usuario.password" required name="password" #password="ngModel" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</div>

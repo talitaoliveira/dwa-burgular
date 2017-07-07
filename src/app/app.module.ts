@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 
 import { ItemComponent } from './cardapio/item/item.component';
 import { CardapioModule } from './cardapio/cardapio.module';
 import { PerfilModule } from './perfil/perfil.module';
+
+
 import { routing } from './app.routing';
 @NgModule({
   declarations: [
@@ -20,7 +21,6 @@ import { routing } from './app.routing';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    PerfilComponent,
     PedidosComponent,
     ItemComponent
   ],
@@ -29,7 +29,8 @@ import { routing } from './app.routing';
     FormsModule,
     HttpModule,
     routing,
-    CardapioModule
+    CardapioModule,
+    PerfilModule
   ],
   providers: [],
   bootstrap: [AppComponent]
