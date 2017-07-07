@@ -10,7 +10,7 @@ const APP_ROUTES: Routes = [
 	{ path: 'cardapio', component: CardapioComponent },
 	{ path: 'perfil', component: PerfilComponent },
 	{ path: 'pedidos', component: PedidosComponent },
-	{ path: 'home', component: HomeComponent }
+	{ path: '', component: HomeComponent }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

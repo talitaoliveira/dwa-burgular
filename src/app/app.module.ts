@@ -9,10 +9,11 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
-import { routing } from './app.routing';
+
 import { ItemComponent } from './cardapio/item/item.component';
 import { CardapioModule } from './cardapio/cardapio.module';
-
+import { PerfilModule } from './perfil/perfil.module';
+import { routing } from './app.routing';
 @NgModule({
   declarations: [
     AppComponent,
