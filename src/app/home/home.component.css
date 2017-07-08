@@ -2,4 +2,6 @@
   width: 100%;
   height: 400px;
   background-image: url("/assets/img/bg-preto.jpg");
+  margin: auto;
+  background-repeat: no-repeat;
 }
