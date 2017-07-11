@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from './../usuario';
 import { PerfilService } from './../perfil.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,18 +12,36 @@ export class CadastroComponent implements OnInit {
 
   private usuario: Usuario[] = [];
 
-  private user: Usuario;
+  usuario_cadastrado;
 
-  constructor(private perfilService: PerfilService) { }
+  mensagem;
+
+  constructor(
+    private perfilService: PerfilService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
   onSubmit(form) {
-    var result,
-        userValue = form.value;
 
-    this.perfilService.setUser(userValue).subscribe(data => console.log(data));
+    this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
+    setTimeout(() => { this.router.navigate(['login']); }, 3000);
+
+    /*let userValue = form.value;
+
+    this.perfilService.setUser(userValue)
+    .subscribe(
+        data => {
+          this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
+           setTimeout(() => { this.router.navigate(['login']); }, 3000);
+
+        },
+        err => {
+            this.mensagem = 'Erro ao cadastrar usuário ';
+        }
+      );*/
   }
 
 }
