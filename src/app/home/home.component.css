@@ -5,3 +5,17 @@
   margin: auto;
   background-repeat: no-repeat;
 }
+.container{
+display: flex;
+flex-direction: row;
+flex-flow: row wrap;
+/*flex-wrap: nowrap;
+justify-content:center;
+align-items:center;
+flex-wrap: wrap;
+align-content: center;*/
+}
+
+
+
+
