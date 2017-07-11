@@ -23,7 +23,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
-        let id = params['id'];
+        const id = params['id'];
         this.cardapioService.getProduct(id).subscribe(data => this.produto = data);
       }
     );
