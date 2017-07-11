@@ -1,16 +1,16 @@
-// $(document).ready(function(){
-// 	/* NAVBAR */
-// 	$(".button-collapse").sideNav();
+$(document).ready(function(){
+ 	/* NAVBAR */
+	$(".button-collapse").sideNav();
 
-// 	$(".menu-cardapio").click(function(){
-// 		setTimeout(teste => {Materialize.showStaggeredList('#staggered-test');}, 500)
+	$(".menu-cardapio").click(function(){
+		setTimeout(teste => {Materialize.showStaggeredList('#staggered-test');}, 500)
 		
-// 	});
-// $('.owl-carousel').owlCarousel({
-//     items:1,
-//     margin:10,
-//     autoHeight:true
-// });
-// });
+	});
+/* 	$('.owl-carousel').owlCarousel({
+		items:1,
+		margin:10,
+		autoHeight:true
+	}); */
+});
 
 
