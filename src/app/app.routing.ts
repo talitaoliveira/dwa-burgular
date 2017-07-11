@@ -6,6 +6,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { CardapioComponent } from './cardapio/cardapio.component';
 import { CadastroComponent } from './perfil/cadastro/cadastro.component';
+import { LoginComponent } from './home/login/login.component';
 
 const APP_ROUTES: Routes = [
 	{ path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const APP_ROUTES: Routes = [
 	{ path: 'pedidos', component: PedidosComponent },
 	{ path: 'perfil', component: PerfilComponent },
 	{ path: 'cadastro', component: CadastroComponent },
+	{ path: 'login', component: LoginComponent },
 	{ path: '', component: HomeComponent }
 ];
 
