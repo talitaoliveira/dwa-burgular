@@ -6,21 +6,20 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 
 import { ItemComponent } from './cardapio/item/item.component';
 import { CardapioModule } from './cardapio/cardapio.module';
 import { PerfilModule } from './perfil/perfil.module';
 
-
 import { routing } from './app.routing';
+import { HomeModule } from './home/home.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent,
     PedidosComponent,
     ItemComponent
   ],
@@ -30,7 +29,8 @@ import { routing } from './app.routing';
     HttpModule,
     routing,
     CardapioModule,
-    PerfilModule
+    PerfilModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
