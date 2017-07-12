@@ -3,6 +3,8 @@ import { Usuario } from './../usuario';
 import { PerfilService } from './../perfil.service';
 import { Router } from '@angular/router';
 
+import { AuthService } from './../../home/login/auth.service';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -12,16 +14,25 @@ export class CadastroComponent implements OnInit {
 
   private usuario: Usuario[] = [];
 
-  usuario_cadastrado;
-
   mensagem;
+
+  usuarioLogado: boolean = false;
 
   constructor(
     private perfilService: PerfilService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
+
+    if( localStorage.token ){
+      console.log("ta logado");
+      this.usuarioLogado = true;
+    }else{
+      console.log("não ta logado");
+      this.usuarioLogado = false;
+    }
   }
 
   onSubmit(form) {

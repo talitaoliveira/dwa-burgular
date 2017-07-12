@@ -7,35 +7,56 @@ import { Usuario } from './../../perfil/usuario';
 @Injectable()
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+  //private usuarioAutenticado: boolean = false;
 
-  mostrarMenuEmitter = new EventEmitter<boolean>();
+  private usuarioAutenticado = new EventEmitter<boolean>();
 
-  private url: string = 'http://restful-api-dwa.herokuapp.com/users';
+  private url: string = 'http://restful-api-dwa.herokuapp.com/authentication';
+
+  public token: string;
+  public expires: string;
 
   constructor(
     private router: Router,
     private http: Http
   ) { }
 
-  fazerLogin(usuario: Usuario) {
+  fazerLogin(user: Usuario) {
 
-    // if( usuario.nome === 'usuario@email.com' &&
-    //   usuario.senha === '123456' ) {
-    //     this.usuarioAutenticado = true;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    let options = new RequestOptions({ headers: headers });
 
-    //     this.mostrarMenuEmitter.emit(true);
+    let data = new URLSearchParams();
+    data.append('email', user.email);
+    data.append('password', user.password);
 
-    //     this.router.navigate(['/']);
+    return this.http.post(this.url, data.toString(), options)
+      .map((response: Response) => {
+      let token = response.json() && response.json().token;
+        if (token) {
+            // set token property
+            this.token = token;
+            let expires = response.json().expires;
 
-    // }else{
-    //     this.usuarioAutenticado = false;
-    //     this.mostrarMenuEmitter.emit(false);
-    // }
+            // store username and jwt token in local storage to keep user logged in between page refreshes
+            localStorage.setItem('token', token );
+            localStorage.setItem('expires', expires );
 
+            // return true to indicate successful login
+            this.usuarioAutenticado.emit(true);
+            return true;
+        } else {
+            // return false to indicate failed login
+            this.usuarioAutenticado.emit(false);
+            return false;
+    //let body = JSON.stringify(data);
+        }
+      });
   }
 
   usuarioEstaAutenticado() {
+    console.log(this.usuarioAutenticado);
     return this.usuarioAutenticado;
   }
 

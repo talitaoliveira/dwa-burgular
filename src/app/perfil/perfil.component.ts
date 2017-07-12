@@ -12,6 +12,15 @@ export class PerfilComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    if( localStorage.token ){
+      console.log("ta logado");
+      this.autenticado = true;
+    }else{
+      console.log("não ta logado");
+      this.autenticado = false;
+    }
+
   }
 
 }

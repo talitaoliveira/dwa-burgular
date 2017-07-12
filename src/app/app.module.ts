@@ -14,6 +14,7 @@ import { PerfilModule } from './perfil/perfil.module';
 
 import { routing } from './app.routing';
 import { HomeModule } from './home/home.module';
+import { AuthGuard } from './guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { HomeModule } from './home/home.module';
     PerfilModule,
     HomeModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
