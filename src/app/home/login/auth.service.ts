@@ -33,31 +33,42 @@ export class AuthService {
 
     return this.http.post(this.url, data.toString(), options)
       .map((response: Response) => {
-      let token = response.json() && response.json().token;
+        let token = response.json() && response.json().token;
         if (token) {
-            // set token property
-            this.token = token;
-            let expires = response.json().expires;
+          // set token property
+          this.token = token;
+          let expires = response.json().expires;
 
-            // store username and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('token', token );
-            localStorage.setItem('expires', expires );
+          // store username and jwt token in local storage to keep user logged in between page refreshes
+          localStorage.setItem('token', token);
+          localStorage.setItem('expires', expires);
 
-            // return true to indicate successful login
-            this.usuarioAutenticado.emit(true);
-            return true;
+          // return true to indicate successful login
+          this.usuarioAutenticado.emit(true);
+          console.log("logou");
+          return true;
         } else {
-            // return false to indicate failed login
-            this.usuarioAutenticado.emit(false);
-            return false;
-    //let body = JSON.stringify(data);
+          // return false to indicate failed login
+          this.usuarioAutenticado.emit(false);
+          console.log("não logou");
+          return false;
+          //let body = JSON.stringify(data);
         }
       });
   }
 
   usuarioEstaAutenticado() {
-    console.log(this.usuarioAutenticado);
-    return this.usuarioAutenticado;
+    // console.log(this.usuarioAutenticado);
+    // return this.usuarioAutenticado;
+
+    if (localStorage.token) {
+      console.log("ta logado");
+      return true;
+    }
+
+    console.log("não ta logado");
+    return false;
+
   }
 
 }

@@ -1,17 +1,20 @@
-<nav>
-  <div class="nav-wrapper">
-    <a routerLink="/home" class="brand-logo">Burgular</a>
-    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a routerLink="/cardapio" class="menu-item menu-cardapio">Cardapio</a></li>
-      <li><a routerLink="/pedidos">Pedidos</a></li>
-      <li><a routerLink="/perfil">Perfil</a></li>
-    </ul>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a routerLink="/home" class="brand-logo">Burgular</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/cardapio" class="menu-item menu-cardapio">Cardapio</a></li>
+        <li><a routerLink="/pedidos">Pedidos</a></li>
+        <li><a *ngIf="!usuarioLogado" routerLink="/cadastro">Cadastro</a></li>
+        <li><a *ngIf="!usuarioLogado" routerLink="/login">Login</a></li>
+        <li><a *ngIf="usuarioLogado" routerLink="/perfil">Perfil</a></li>
+      </ul>
 
-    <div class="side-nav" id="mobile-demo">
-      <h4>
-        <a routerLink="/home" class="red accent-4">Bem Vindo</a>
-      </h4>
+      <div class="side-nav" id="mobile-demo">
+        <h4>
+          <a routerLink="/home" class="red accent-4">Bem Vindo</a>
+        </h4>
         <ul class="collection">
           <li class="collection-item item-menu">
             <a routerLink="/cardapio">
@@ -25,7 +28,19 @@
               <span>Pedidos</span>  
             </a>
           </li>
-          <li class="collection-item item-menu">
+          <li *ngIf="!usuarioLogado" class="collection-item item-menu">
+            <a routerLink="/cadastro">
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+              <span>Cadastro</span>
+            </a>
+          </li>
+          <li *ngIf="!usuarioLogado" class="collection-item item-menu">
+            <a routerLink="/login">
+            <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+              <span>Login</span>
+            </a>
+          </li>
+          <li *ngIf="usuarioLogado" class="collection-item item-menu">
             <a routerLink="/perfil">
             <i class="fa fa-user fa-2x" aria-hidden="true"></i>
               <span>Perfil</span>
@@ -33,5 +48,6 @@
           </li>
         </ul>
       </div>
-  </div>
-</nav>
+    </div>
+  </nav>
+</div>

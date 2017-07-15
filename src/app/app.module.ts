@@ -12,9 +12,10 @@ import { ItemComponent } from './cardapio/item/item.component';
 import { CardapioModule } from './cardapio/cardapio.module';
 import { PerfilModule } from './perfil/perfil.module';
 
-import { routing } from './app.routing';
 import { HomeModule } from './home/home.module';
 import { AuthGuard } from './guards/auth-guard.service';
+
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,10 @@ import { AuthGuard } from './guards/auth-guard.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing,
+    HomeModule,
     CardapioModule,
     PerfilModule,
-    HomeModule
+    routing,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -15,7 +15,6 @@ export class CadastroComponent implements OnInit {
   private usuario: Usuario[] = [];
 
   mensagem;
-
   usuarioLogado: boolean = false;
 
   constructor(

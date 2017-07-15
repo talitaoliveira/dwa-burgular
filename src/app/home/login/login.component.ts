@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
 
 import { AuthService } from './auth.service';
 import { Usuario } from './../../perfil/usuario';
@@ -14,7 +16,12 @@ export class LoginComponent implements OnInit {
 
   boolLogado: boolean;
 
-  constructor(private authService: AuthService) { }
+  mensagem;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
 
@@ -28,7 +35,21 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin() {
-    this.authService.fazerLogin(this.usuario).subscribe( data => this.boolLogado = data );
+    this.authService.fazerLogin(this.usuario)
+    //.subscribe( data => this.boolLogado = data );
+    .subscribe(
+        data => {
+          this.mensagem = 'Login efetuado, aguarde redirecionamento';
+           setTimeout(() => { this.router.navigate(['cardapio']); }, 3000);
+
+        },
+        err => {
+            this.mensagem = 'Erro ao fazer login ';
+        }
+      );
+
+    /* this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
+    setTimeout(() => { this.router.navigate(['login']); }, 3000); */
   }
 
 }

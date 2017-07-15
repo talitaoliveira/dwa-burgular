@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from './../home/login/auth.service';
 
 @Component({
   selector: 'app-perfil',
@@ -9,7 +12,9 @@ export class PerfilComponent implements OnInit {
 
   autenticado: boolean = false;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
 

@@ -22,3 +22,5 @@ font-size: 1em;
 /*.item-menu  a{
 	padding: 0;
 }*/
+
+.navbar-fixed { z-index: 9999; }
