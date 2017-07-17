@@ -17,7 +17,7 @@ export class PerfilComponent implements OnInit {
 
   sairLogin() {
     localStorage.clear();
-    this.router.navigate(['usuario']);
+    setTimeout(() => { this.router.navigate(['cardapio']); }, 3000);
   }
 
 }

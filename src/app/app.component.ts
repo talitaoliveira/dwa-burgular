@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  usuarioLogado: boolean = false;
+
+  ngOnInit() {
+
+  if ( localStorage.token ) {
+      this.usuarioLogado = true;
+      console.log('ta logado');
+    } else {
+      this.usuarioLogado = false;
+      console.log('não ta logado');
+    }
+
+  }
+
 }

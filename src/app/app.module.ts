@@ -26,6 +26,8 @@ import { routing } from './app.routing';
 import { AuthGuard } from './guards/auth-guard.service';
 import { AuthService } from './usuario/login/auth.service';
 import { UsuarioService } from './usuario/usuario.service';
+import { CarrinhoComponent } from './navbar/carrinho/carrinho.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { UsuarioService } from './usuario/usuario.service';
     UsuarioComponent,
     PerfilComponent,
     CadastroComponent,
-    LoginComponent
+    LoginComponent,
+    CarrinhoComponent,
+    PedidosComponent
   ],
   imports: [
      BrowserModule,
