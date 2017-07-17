@@ -14,7 +14,7 @@ export class CardapioComponent implements OnInit {
 
   ngOnInit() {
     this.cardapioService.getProducts()
-      .subscribe(data => {this.cardapio = data},
+      .subscribe( data => { this.cardapio = data; },
             err => {
                 console.error(err);
             });

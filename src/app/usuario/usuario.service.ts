@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class PerfilService {
+export class UsuarioService {
 
   private url: string = "http://restful-api-dwa.herokuapp.com/users";
 

@@ -1,9 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-
 import { AuthService } from './auth.service';
-import { Usuario } from './../../perfil/usuario';
+import { Usuario } from './../usuario';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +24,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
-    if( localStorage.token ){
+    if( localStorage.token ) {
       console.log("ta logado");
-    }else{
+    }else {
       console.log("não ta logado");
     }
 

@@ -4,37 +4,51 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { PedidosComponent } from './pedidos/pedidos.component';
+import { HomeComponent } from './home/home.component';
 
-import { ItemComponent } from './cardapio/item/item.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+
 import { CardapioModule } from './cardapio/cardapio.module';
-import { PerfilModule } from './perfil/perfil.module';
-
-import { HomeModule } from './home/home.module';
-import { AuthGuard } from './guards/auth-guard.service';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { PerfilComponent } from './usuario/perfil/perfil.component';
+import { CadastroComponent } from './usuario/cadastro/cadastro.component';
+import { LoginComponent } from './usuario/login/login.component';
 
 import { routing } from './app.routing';
+
+// import { usuarioRouting } from './usuario/usuario.routing';
+
+// import { UsuarioModule } from './usuario/usuario.module';
+
+import { AuthGuard } from './guards/auth-guard.service';
+import { AuthService } from './usuario/login/auth.service';
+import { UsuarioService } from './usuario/usuario.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    PedidosComponent,
-    ItemComponent
+    HomeComponent,
+    NotFoundComponent,
+    UsuarioComponent,
+    PerfilComponent,
+    CadastroComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
+     BrowserModule,
     FormsModule,
     HttpModule,
-    HomeModule,
-    CardapioModule,
-    PerfilModule,
     routing,
+    CardapioModule,
+    // usuarioRouting,
+    // UsuarioModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, AuthService, UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

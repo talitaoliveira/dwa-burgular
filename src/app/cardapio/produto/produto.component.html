@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col s12 m7">
     <div class="card">
       <div class="card-image">
@@ -24,6 +24,33 @@
       </div>
       <div class="card-action">
         <a class="waves-effect waves-light btn-large">Comprar</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="col s1 m1">
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="{{ produto.image }}" width="50">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <h4>
+          {{ produto.name }}
+        </h4>
+        <p>
+          {{ produto.description }}
+        </p>
+        <div *ngIf="produto.items">
+          <h5>O que ele acompanha: </h5>
+          <div class="chip" *ngFor="let item of produto.items">
+            {{ item.name }}
+          </div>
+        </div>
+      </div>
+      <div class="card-action">
+        <a href="#"><i class="material-icons">shopping_cart</i> Inserir no carrinho</a>
       </div>
     </div>
   </div>

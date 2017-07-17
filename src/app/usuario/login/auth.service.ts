@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
-import { Usuario } from './../../perfil/usuario';
+import { Usuario } from './../usuario';
 
 @Injectable()
 export class AuthService {

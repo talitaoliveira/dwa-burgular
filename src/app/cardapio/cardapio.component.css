@@ -1,0 +1,13 @@
+.produtos{
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (min-width: 798px) {
+  .produtos{
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+  }
+}

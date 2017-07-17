@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from './../usuario';
-import { PerfilService } from './../perfil.service';
-import { Router } from '@angular/router';
 
-import { AuthService } from './../../home/login/auth.service';
+import { Usuario } from './../usuario';
+import { Router } from '@angular/router';
+import { UsuarioService } from './../usuario.service';
+import { AuthService } from './../login/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -18,30 +18,24 @@ export class CadastroComponent implements OnInit {
   usuarioLogado: boolean = false;
 
   constructor(
-    private perfilService: PerfilService,
     private router: Router,
-    private authService: AuthService
+    private usuarioService: UsuarioService
   ) { }
 
   ngOnInit() {
 
-    if( localStorage.token ){
-      console.log("ta logado");
-      this.usuarioLogado = true;
-    }else{
-      console.log("não ta logado");
-      this.usuarioLogado = false;
-    }
+    
+
   }
 
   onSubmit(form) {
 
-    this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
-    setTimeout(() => { this.router.navigate(['login']); }, 3000);
+    // this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
+    // setTimeout(() => { this.router.navigate(['login']); }, 3000);
 
-    /*let userValue = form.value;
+    let userValue = form.value;
 
-    this.perfilService.setUser(userValue)
+    this.usuarioService.setUser(userValue)
     .subscribe(
         data => {
           this.mensagem = 'Usuário cadastrado, aguarde redirecionamento';
@@ -51,7 +45,7 @@ export class CadastroComponent implements OnInit {
         err => {
             this.mensagem = 'Erro ao cadastrar usuário ';
         }
-      );*/
+      );
   }
 
 }
