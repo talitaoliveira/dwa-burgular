@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+
+  @Input() usuario: any;
+  mensagem;
 
   constructor(
     private router: Router,
@@ -17,6 +20,7 @@ export class PerfilComponent implements OnInit {
 
   sairLogin() {
     localStorage.clear();
+    this.mensagem = 'Saindo...';
     setTimeout(() => { this.router.navigate(['cardapio']); }, 3000);
   }
 

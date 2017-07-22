@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
     if( localStorage.token ) {
       console.log("ta logado");
+      this.router.navigate(['usuario']);
     }else {
       console.log("não ta logado");
     }

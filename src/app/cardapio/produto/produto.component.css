@@ -5,3 +5,7 @@
 .card-content{
 	width: 100% !important;
 }
+
+.botao-inserir{
+	cursor: pointer;
+}

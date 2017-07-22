@@ -38,10 +38,12 @@ export class AuthService {
           // set token property
           this.token = token;
           let expires = response.json().expires;
+          let user = response.json().user;
 
           // store username and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('token', token);
           localStorage.setItem('expires', expires);
+          localStorage.setItem('usuario', JSON.stringify(user));
 
           // return true to indicate successful login
           this.usuarioAutenticado.emit(true);

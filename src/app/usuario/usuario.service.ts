@@ -33,5 +33,9 @@ export class UsuarioService {
 
   }
 
+  getUser() {
+
+  }
+
 }
 

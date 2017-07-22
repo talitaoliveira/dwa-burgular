@@ -1,6 +1,6 @@
 $(document).ready(function(){
  	/* NAVBAR */
-	$(".button-collapse").sideNav();
+	$(".button-collapse-menu").sideNav();
 
 	$(".menu-cardapio").click(function(){
 		setTimeout(teste => {Materialize.showStaggeredList('#staggered-test');}, 500)

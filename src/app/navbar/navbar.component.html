@@ -2,7 +2,12 @@
   <nav>
     <div class="nav-wrapper">
       <a class="brand-logo" routerLink="">Burgular</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse button-collapse-menu">
+        <i class="material-icons">menu</i>
+      </a>
+      <a routerLink="/pedidos" data-activates="mobile-demo" class="button-collapse">
+        <i class="material-icons">shopping_cart</i>
+      </a>
       <ul class="right hide-on-med-and-down">
         <li><a class="menu-item menu-cardapio" routerLink="/cardapio">Cardapio</a></li>
         <li><a routerLink="/usuario">Área do Usuário</a></li>

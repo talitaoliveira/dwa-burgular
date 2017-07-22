@@ -1,5 +1,5 @@
 <div class="wrapper" *ngIf="usuarioLogado" >
-  <app-perfil></app-perfil>
+  <app-perfil [usuario]="objUsuario" ></app-perfil>
 </div>
 
 <div class="wrapper" *ngIf="!usuarioLogado" >
