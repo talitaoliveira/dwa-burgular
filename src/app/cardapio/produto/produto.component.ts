@@ -12,7 +12,6 @@ export class ProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(localStorage);
   }
 
   adicionarCarrinho(produto) {
