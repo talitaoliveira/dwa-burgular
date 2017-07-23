@@ -1,3 +1,7 @@
+<div class="card-panel light-blue darken-1 white-text" *ngIf="mensagem">{{ mensagem }}</div>
+
+<br>
+
 <div class="col s1 m1">
   <div class="card horizontal">
     <div class="card-image">
@@ -5,6 +9,9 @@
     </div>
     <div class="card-stacked">
       <div class="card-content">
+          <span class="white-text badge red">
+            {{ produto.price | currency:'BRL':true }}
+        </span>
         <h4>
           {{ produto.name }}
         </h4>
@@ -19,7 +26,7 @@
         </div>
       </div>
       <div class="card-action">
-        <a (click)="adicionarCarriho(produto)" class="botao-inserir">
+        <a (click)="adicionarCarrinho(produto)" class="botao-inserir">
           <i class="material-icons">shopping_cart</i> Inserir no carrinho
         </a>
       </div>

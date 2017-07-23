@@ -12,14 +12,18 @@ export class ProdutoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(localStorage);
   }
+
+  mensagem;
 
   adicionarCarrinho(produto) {
     
-    console.log(produto);
+    // console.log(produto);
 
-    //localStorage['produtos']['0'] = JSON.stringify(produto);
+    // console.log(localStorage);
+
+    localStorage['carrinho'] = JSON.stringify(produto);
+    this.mensagem = "Produto adicionado ao carrinho";
 
 
     

@@ -1,3 +1,7 @@
+<div class="card-panel light-blue darken-1 white-text" *ngIf="mensagem">{{ mensagem }}</div>
+
+<br>
+
 <div class="container">
   <h4>Pedidos</h4>
   <table class="bordered striped">
@@ -11,21 +15,18 @@
 
     <tbody>
       <tr>
-        <td>Alvin</td>
-        <td>Eclair</td>
-        <td>$0.87</td>
-      </tr>
-      <tr>
-        <td>Alan</td>
-        <td>Jellybean</td>
-        <td>$3.76</td>
-      </tr>
-      <tr>
-        <td>Jonathan</td>
-        <td>Lollipop</td>
-        <td>$7.00</td>
+        <td>{{ items.name }}</td>
+        <td>{{ items.description }}</td>
+        <td>{{ items.price | currency:'BRL':true }}</td>
       </tr>
     </tbody>
   </table>
+  <br>
+  <br>
+
+  <button class="btn waves-effect waves-light" type="submit" name="action" (click)="finalizar()" *ngIf="usuarioLogado" >
+   Finalizar Pedido
+    <i class="material-icons right">send</i>
+  </button>
 
 </div>
