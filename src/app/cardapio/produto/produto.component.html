@@ -1,10 +1,17 @@
- <div class="col s1 m1">
+<div class="card-panel light-blue darken-1 white-text" *ngIf="mensagem">{{ mensagem }}</div>
+
+<br>
+
+<div class="col s1 m1">
   <div class="card horizontal">
     <div class="card-image">
       <img src="{{ produto.image }}" width="50">
     </div>
     <div class="card-stacked">
       <div class="card-content">
+          <span class="white-text badge red">
+            {{ produto.price | currency:'BRL':true }}
+        </span>
         <h4>
           {{ produto.name }}
         </h4>
@@ -26,4 +33,3 @@
     </div>
   </div>
 </div>
- 

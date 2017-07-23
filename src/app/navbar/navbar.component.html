@@ -11,7 +11,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="menu-item menu-cardapio" routerLink="/cardapio">Cardapio</a></li>
         <li><a routerLink="/usuario">Área do Usuário</a></li>
-        <li *ngIf="usuarioLogado" >
+        <li >
           <app-carrinho></app-carrinho>
         </li>
       </ul>
@@ -27,7 +27,7 @@
               <span>Cardapio</span>
             </a>
           </li>
-          <li class="collection-item item-menu" *ngIf="usuarioLogado">
+          <li class="collection-item item-menu">
             <a routerLink="/pedidos">
               <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
               <span>Carrinho</span>  
